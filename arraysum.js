@@ -16,3 +16,5 @@ function getsumres(numbers) {
 
 var res = getsumres(marks)
 console.log("The result is: ", res);
+
+var string = "My name is Shahed";
