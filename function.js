@@ -4,3 +4,10 @@ function sayLoveyou() {
 }
 
 sayLoveyou();
+
+function doubleit(num) {
+    return num * 2;
+}
+
+var take = doubleit(2)
+console.log(take)
