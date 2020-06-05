@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>My list</h1>
+        <ul id="myList">
+            <li id="item_id1" class="item">Lorem, ipsum dolor.</li>
+            <li id="item_id2" class="item">Necessitatibus, similique optio.</li>
+            <li id="item_id3" class="item">Minus, itaque quidem.</li>
+            <li id="item_id4" class="item">Eum, reiciendis. Et?</li>
+            <li id="item_id4" class="item">Et, rem unde!</li>
+            <li id="item_id5" class="item">Lorem ipsum dolor sit amet consectetur.</li>
+        </ul>
+        <button id="addItem" class="btn btn-success">Try</button>
+    </div>
+    <script>
+        // let items = document.getElementsByClassName('item');
+        // for (let i = 0; i < items.length; i++) {
+        //     const item = items[i];
+        //     item.addEventListener('click', function(event) {
+        //         // console.log(this);
+        //         // console.log(this.innerText)
+        //         // console.log(event.target.parentNode)
+        //         // console.log(event.target.parentNode)
+        //         // console.log(event.target)
+        //         event.target.parentNode.removeChild(event.target);
+        //     });
+        // }
+        document.getElementById('myList').addEventListener('click', function(event) {
+            // console.log("Hello", this, event.target);
+            // console.log(event.target.parentNode);
+            event.target.parentNode.removeChild(event.target);
+        })
+
+        let addItem = document.getElementById('addItem');
+        addItem.addEventListener('click', function(event) {
+            // console.log("Hello this is working");
+            var itemParent = document.getElementById('myList');
+            var newItem = document.createElement('li');
+            newItem.innerText = 'Brand New Item';
+            itemParent.appendChild(newItem);
+        })
+    </script>
+</body>
+
+</html>

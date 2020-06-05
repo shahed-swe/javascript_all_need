@@ -33,7 +33,16 @@ function setSum2() {
         sum += number;
 
     }
-    return sum;
+
+    function sumNumCheck(take) {
+        if (take % 2 == 0) {
+            return "Your value is odd";
+        } else {
+            return "Your value is even";
+        }
+    }
+    return sumNumCheck(sum);
+
 }
 
 var res2 = setSum2(nums)
