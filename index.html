@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <title>Login Panel</title>
     <style>
@@ -35,7 +35,7 @@
         }
         
         .bank-section {
-            display: none;
+            /* display: none; */
         }
     </style>
 </head>
@@ -68,7 +68,7 @@
                 </div>
                 <div class="card bg-warning col-3 mx-auto">
                     <p class="card-text">Balance</p>
-                    <h1>$<span id="balance">00</span></h1>
+                    <h1>$<span id="balance">1240</span></h1>
                 </div>
             </div>
         </div>
@@ -90,9 +90,9 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="js/jquery.min.js"></script>
+    <SCript src="js/bootstrap.min.js"></SCript>
+    <script src="calculate.js"></script>
     <!-- <script>
         $(function() {
             $("#login").click(function() {
@@ -107,10 +107,9 @@
                     alert("Failed To Login");
                 }
             });
-
         })
     </script> -->
-    <script>
+    <!-- <script>
         // login button event handler
         const loginbtn = document.getElementById("login");
         loginbtn.addEventListener('click', function() {
@@ -129,7 +128,7 @@
         });
         // deposite button event handler
         const depositebtn = document.getElementById("deposite-btn");
-        document.getElementById("balance").innerText = "1240";
+        document.getElementById("balance").innerText = 1240;
         depositebtn.addEventListener('click', function() {
             const deposite_value = parseFloat(document.getElementById("depo-val").value);
             if (deposite_value > 0) {
@@ -149,28 +148,19 @@
         });
         // withdraw event
         const withdrawbtn = document.getElementById("withdraw-btn");
-        const balance = parseFloat(document.getElementById("balance").innerText);
+        const new_balance = parseFloat(document.getElementById("balance").innerText);
         withdrawbtn.addEventListener('click', function() {
             const withdraw_value = parseFloat(document.getElementById("with-val").value);
             console.log(withdraw_value);
             if (withdraw_value > 0) {
-                // for balance
-                if (balance > 0 && withdraw_value <= balance) {
-                    const currentWith = parseFloat(document.getElementById("withdraw").innerText);
-                    const totalwithdraw = currentWith + withdraw_value;
-                    document.getElementById("withdraw").innerText = totalwithdraw;
-                    const totalBalance = balance - withdraw_value;
-                    document.getElementById("balance").innerText = totalBalance;
-
-                } else if (withdraw_value > balance) {
-                    alert("Amount is greater then balance")
-                } else {
-                    document.getElementById("balace").innerText = 0;
-                    alert("You don't have enough money in you bank, Thank you!");
-                }
+                const currentWith = parseFloat(document.getElementById("withdraw").innerText);
+                const totalwithdraw = currentWith + withdraw_value;
+                document.getElementById("withdraw").innerText = totalwithdraw;
+                const totalBalance = new_balance - withdraw_value;
+                document.getElementById("balance").innerText = totalBalance;
             }
         })
-    </script>
+    </script> -->
 </body>
 
 </html>
